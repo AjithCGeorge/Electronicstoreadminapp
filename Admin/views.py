@@ -23,9 +23,8 @@ def adminlogin(request):
             if user is not None:
                 auth.login(request, user)
                 return redirect('adminhome')
-            else:
-                messages.error(request,'username or password not correct')
-                m='Username or password not correct'
+        else:
+                messages.error(request, 'username or password not correct')
                 return redirect('adminlogin')
 
     return render(request, 'adminLogin.html')
