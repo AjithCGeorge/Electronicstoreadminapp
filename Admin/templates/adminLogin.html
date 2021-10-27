@@ -4,6 +4,12 @@
 
 <div class="container" style="margin-top:120px">
   <h2>Login with admin credentials</h2>
+  {% for message in messages %}
+
+    <div class="alert alert-danger" style="width:50%">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+        {{ message }}
+    </div>
 
   <form action="" method="POST" class="pt-3">
       {%csrf_token%}
@@ -25,13 +31,6 @@
 
 </div>
 
-{% for message in messages %}
 
-    <div class="alert alert-success">
-        <a class="close" href="#" data-dismiss="alert">×</a>
-           {{ message }}hy
-    </div>
-
-{% endfor %}
 
 {% endblock %}
